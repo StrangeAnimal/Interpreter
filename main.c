@@ -2,7 +2,7 @@
 #include <string.h>
 
 
-char commands [200][10];
+char commands [30][100];
 int  variables [26];
 int currentvariable =0;
 
@@ -50,49 +50,62 @@ void print(int x){
     
     }
 
-void read_words () {
-     int i = 0;
 
- int BUFSIZE = 1000;
- char* words[20];
- FILE *fp = fopen("f.txt", "r");
- if (fp == 0){
-        fprintf(stderr, "Error while opening");
-        exit(1);
- }
-
- words[i] = malloc(BUFSIZE);
-  while (fgets(words[i], BUFSIZE, fp)) {
-        i++;
-        words[i] = malloc(BUFSIZE);
- } 
- 
- 
- 
- const char s[2] = " ";
-   char *token;
-   
-   /* get the first token */
-   token = strtok(words, s);
-   
-   /* walk through other tokens */
-   while( token != NULL ) {
-      printf( " %s\n", token );
+void readcommands(){
     
-      token = strtok(NULL, s);
-   }
-   
-   return(0);
+    printf("Enter commands line by line pressing enter enter command exit to finish maximum 30 lines \n");
+    
+    int x = 0;
+    
+    do{
+    
+    scanf("%s",commands[x]);
+    
+  if(commands[x][0] == 'e' &&commands[x][1] == 'x' &&commands[x][2] == 'i' &&commands[x][3] == 't')break;
+  
+  
+  
+    
+    x++;
+        
+    
+    
+    
+    
+    
+    }while(x<29);
+    
+    
+    
+    
 }
 
 
- 
-
+void interpreter(){
+    
+    
+    for(int x=0 x<30; x++){
+        
+        
+        
+        
+        
+        
+        
+        
+        }
+    
+    
+    
+    
+    }
 
 
 
 
 int main(int argc, char **argv)
 {
-read_words();
+readcommands();
+return 0;
+
 }
