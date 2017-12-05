@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <string.h>
 
 
 char commands [200][10];
-int  variables [20];
+int  variables [26];
 int currentvariable =0;
 
 
@@ -65,10 +66,28 @@ void read_words () {
         i++;
         words[i] = malloc(BUFSIZE);
  } 
-
-printf("%s",words[2]);
  
+ 
+ 
+ const char s[2] = " ";
+   char *token;
+   
+   /* get the first token */
+   token = strtok(words, s);
+   
+   /* walk through other tokens */
+   while( token != NULL ) {
+      printf( " %s\n", token );
+    
+      token = strtok(NULL, s);
+   }
+   
+   return(0);
 }
+
+
+ 
+
 
 
 
@@ -76,5 +95,4 @@ printf("%s",words[2]);
 int main(int argc, char **argv)
 {
 read_words();
-return 0;
 }
